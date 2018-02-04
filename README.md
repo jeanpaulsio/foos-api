@@ -94,4 +94,45 @@ Response:
 }
 ```
 
+## Getting a Resource
 
+* let's work on getting a list of users.
+* i.e. `GET api/v1/users` should return an index of users
+* first, we're going to need to be able to serialize our output
+
+```
+# Gemfile
+
+gem 'active_model_serializers', '~> 0.10.7'
+```
+
+```
+$ rails g serializer user
+```
+
+```
+# app/serializers/user_serializer.rb
+
+class UserSerializer < ActiveModel::Serializer
+  attributes :id, :handle, :email
+end
+```
+
+* then, we can create an `index` action on our `UsersController`
+* we can also make it so that the `UsersController` is protected
+
+```ruby
+class V1::UsersController < ApplicationController
+  before_action :authenticate_user
+
+  def index
+    render json: User.all
+  end
+end
+```
+
+* in order for us to use `before_action :authenticate_user`, we need to make sure that our `ApplicationController` has this line:
+
+```
+include Knock::Authenticable
+```
