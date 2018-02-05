@@ -1,3 +1,14 @@
+# Getting Started
+
+```
+$ git clone https://github.com/jeanpaulsio/foos-api.git
+$ cd foos-api
+$ bundle install
+$ rails db:setup
+$ rails db:seed
+$ rails server
+```
+
 # API Docs
 
 ## User
