@@ -131,8 +131,8 @@ $ rails db:migrate
 user = User.new
 user.email= "jp@rails.com"
 user.handle = "jp"
-user.password = "Ready2go"
-user.password_confirmation = "Ready2go"
+user.password = "password"
+user.password_confirmation = "password"
 user.save
 ```
 
@@ -180,18 +180,18 @@ end
 
 Body:
 
-```json
+```
 {
 	"auth": {
 		"email": "jp@rails.com",
-		"password": "Ready2go"
+		"password": "password"
 	}
 }
 ```
 
 Response:
 
-```json
+```
 {
     "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTc4MDEyNTcsInN1YiI6MX0.TnkIt3jzPYWxMSF2-DFjXfpLUVlcdt8LFmFe_fIIL0c"
 }
