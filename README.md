@@ -11,9 +11,9 @@ Body
 ```
 { 
   "auth": {
-		"email": "jp@rails.com",
-		"password": "password"
-	}
+    "email": "jp@rails.com",
+    "password": "password"
+    }
 }
 ```
 
@@ -35,12 +35,12 @@ Body
 
 ```
 {
-	"user": {
-		"handle": "jerry",
-		"email": "jerry@rails.com",
-		"password": "password",
-		"password_confirmation": "password"
-	}
+  "user": {
+    "handle": "jerry",
+    "email": "jerry@rails.com",
+    "password": "password",
+    "password_confirmation": "password"
+  }
 }
 ```
 
@@ -74,16 +74,16 @@ Response
 
 ```
 [
-    {
-        "id": 1,
-        "handle": "jp",
-        "email": "jp@rails.com"
-    },
-    {
-        "id": 2,
-        "handle": "kramer",
-        "email": "kramer@rails.com"
-    }
+  {
+      "id": 1,
+      "handle": "jp",
+      "email": "jp@rails.com"
+  },
+  {
+      "id": 2,
+      "handle": "kramer",
+      "email": "kramer@rails.com"
+  }
 ]
 ```
 
