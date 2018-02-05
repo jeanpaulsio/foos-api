@@ -8,7 +8,7 @@ Authentication is done with JWTs. Simply send an `email` and `password` and a JW
 
 Body
 
-```json
+```
 { 
   "auth": {
 		"email": "jp@rails.com",
@@ -19,7 +19,7 @@ Body
 
 Response
 
-```json
+```
 {
   "jwt": "eyJ0e....."
 }
@@ -33,7 +33,7 @@ Registering a new usesr
 
 Body
 
-```json
+```
 {
 	"user": {
 		"handle": "jerry",
@@ -46,7 +46,7 @@ Body
 
 Response
 
-```json
+```
 {
     "id": 3,
     "handle": "jerry",
@@ -60,7 +60,7 @@ Response
 
 Headers
 
-```js
+```
 {
   headers: {
     Accept: "application/json",
@@ -72,7 +72,7 @@ Headers
 
 Response
 
-```json
+```
 [
     {
         "id": 1,
