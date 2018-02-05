@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :primary_teams,   class_name: 'Team', foreign_key: 'captain_id'
+  has_many :secondary_teams, class_name: 'Team', foreign_key: 'player_id'
+
   before_save :downcase_email
 
   has_secure_password

@@ -1,3 +1,93 @@
+# API Docs
+
+## User
+
+Authentication is done with JWTs. Simply send an `email` and `password` and a JWT will be returned
+
+`POST /api/v1/user_token`
+
+Body
+
+```json
+{
+	"auth": {
+		"email": "jp@rails.com",
+		"password": "password"
+	}
+}
+```
+
+Response
+
+```json
+{
+    "jwt": "eyJ0e....."
+}
+```
+
+---
+
+Registering a new usesr
+
+`POST /api/v1/users`
+
+Body
+
+```json
+{
+	"user": {
+		"handle": "jerry",
+		"email": "jerry@rails.com",
+		"password": "Ready2go",
+		"password_confirmation": "Ready2go"
+	}
+}
+```
+
+Response
+
+```json
+{
+    "id": 3,
+    "handle": "jerry",
+    "email": "jerry@rails.com"
+}
+```
+
+---
+
+`GET /api/v1/users`
+
+Headers
+
+```json
+{
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + JWT_TOKEN
+  }
+}
+```
+
+Response
+
+```json
+[
+    {
+        "id": 1,
+        "handle": "jp",
+        "email": "jp@rails.com"
+    },
+    {
+        "id": 2,
+        "handle": "kramer",
+        "email": "kramer@rails.com"
+    }
+]
+```
+
+---
 
 
 ## Steps to Victory
