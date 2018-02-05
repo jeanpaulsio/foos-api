@@ -182,10 +182,10 @@ Body:
 
 ```
 {
-	"auth": {
-		"email": "jp@rails.com",
-		"password": "password"
-	}
+  "auth": {
+    "email": "jp@rails.com",
+    "password": "password"
+  }
 }
 ```
 
@@ -193,7 +193,7 @@ Response:
 
 ```
 {
-    "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTc4MDEyNTcsInN1YiI6MX0.TnkIt3jzPYWxMSF2-DFjXfpLUVlcdt8LFmFe_fIIL0c"
+  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTc4MDEyNTcsInN1YiI6MX0.TnkIt3jzPYWxMSF2-DFjXfpLUVlcdt8LFmFe_fIIL0c"
 }
 ```
 
