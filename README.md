@@ -9,8 +9,8 @@ Authentication is done with JWTs. Simply send an `email` and `password` and a JW
 Body
 
 ```json
-{
-	"auth": {
+{ 
+  "auth": {
 		"email": "jp@rails.com",
 		"password": "password"
 	}
@@ -21,7 +21,7 @@ Response
 
 ```json
 {
-    "jwt": "eyJ0e....."
+  "jwt": "eyJ0e....."
 }
 ```
 
@@ -38,8 +38,8 @@ Body
 	"user": {
 		"handle": "jerry",
 		"email": "jerry@rails.com",
-		"password": "Ready2go",
-		"password_confirmation": "Ready2go"
+		"password": "password",
+		"password_confirmation": "password"
 	}
 }
 ```
@@ -60,7 +60,7 @@ Response
 
 Headers
 
-```json
+```js
 {
   headers: {
     Accept: "application/json",
