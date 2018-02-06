@@ -13,9 +13,9 @@ $ rails server
 
 ## User
 
-Authentication is done with JWTs. Simply send an `email` and `password` and a JWT will be returned
-
 `POST /api/v1/user_token`
+
+*Authentication is done with JWTs. Simply send an `email` and `password` and a JWT will be returned*
 
 Body
 
@@ -24,7 +24,7 @@ Body
   "auth": {
     "email": "jp@rails.com",
     "password": "password"
-    }
+  }
 }
 ```
 
@@ -38,9 +38,9 @@ Response
 
 ---
 
-Registering a new usesr
-
 `POST /api/v1/users`
+
+*Registers a new user*
 
 Body
 
@@ -97,6 +97,11 @@ Response
   }
 ]
 ```
+
+---
+
+# Teams
+
 
 ---
 
