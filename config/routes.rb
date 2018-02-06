@@ -6,6 +6,7 @@ Rails.application.routes.draw do
         resources :teams, only: :index, controller: 'user_teams'
       end
       resources :teams, only: %i[index create destroy]
+      resources :games, only: %i[index create destroy]
     end
   end
 end
