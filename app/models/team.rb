@@ -8,4 +8,8 @@ class Team < ApplicationRecord
   has_many :games_lost, class_name: 'Game',
                         foreign_key: 'losing_team_id',
                         dependent: :destroy
+
+  def poop
+    games_won.size
+  end
 end
