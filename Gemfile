@@ -20,6 +20,7 @@ gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'minitest-reporters', '~> 1.1', '>= 1.1.19'
 end
 
 group :development do
