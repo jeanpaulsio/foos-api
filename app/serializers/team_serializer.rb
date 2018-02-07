@@ -28,8 +28,8 @@ class TeamSerializer < ActiveModel::Serializer
   end
 
   def winning_percentage
-    return '0%' if games_played.zero?
+    return 0 if games_played.zero?
 
-    "#{((games_won / games_played.to_f) * 100).round(2)}%"
+    ((games_won / games_played.to_f) * 100).round(2)
   end
 end
