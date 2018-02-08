@@ -12,6 +12,11 @@ class User < ApplicationRecord
                      format: { with: VALID_EMAIL_REGEX },
                      uniqueness: { case_sensitive: false }
 
+  def self.from_token_request(request)
+    handle = request.params['auth'] && request.params['auth']['handle']
+    self.find_by(handle: handle)
+  end
+
   private
 
   def downcase_email

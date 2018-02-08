@@ -3,7 +3,6 @@
 * Make sure we don't have duplicate teams in the database
 * Test coverage
 
-
 # Getting Started
 
 ```
