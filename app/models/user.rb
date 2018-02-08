@@ -7,14 +7,14 @@ class User < ApplicationRecord
   has_secure_password
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :handle, presence: true, length: { maximum: 15 }
+  validates :handle, presence: true, length: { maximum: 15 }, uniqueness: true
   validates :email,  presence: true, length: { maximum: 255 },
                      format: { with: VALID_EMAIL_REGEX },
                      uniqueness: { case_sensitive: false }
 
   def self.from_token_request(request)
     handle = request.params['auth'] && request.params['auth']['handle']
-    self.find_by(handle: handle)
+    find_by(handle: handle)
   end
 
   private
