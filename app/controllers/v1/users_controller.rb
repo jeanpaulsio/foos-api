@@ -19,7 +19,8 @@ module V1
     end
 
     def update
-      if current_user.id != params[:id].to_i
+      if current_user.id != params[:id].to_i ||
+         !current_user.authenticate(params[:user][:old_password])
         head :unauthorized
       else
         @user = User.find(params[:id])
