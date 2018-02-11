@@ -4,7 +4,8 @@ module V1
     before_action :authenticate_user
 
     def show
-      render json: { ping: 'pong' }, status: :ok
+      token = request.headers['Authorization'].split.last
+      render json: { jwt: token }, status: :ok
     end
   end
 end
