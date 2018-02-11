@@ -19,11 +19,13 @@ module V1
     end
 
     def update
-      if current_user.id != params[:id].to_i ||
-         !current_user.authenticate(params[:user][:old_password])
+      token = request.headers['Authorization'].split.last
+      id    = Knock::AuthToken.new(token: token).payload['sub']
+
+      if !current_user.authenticate(params[:user][:old_password])
         head :unauthorized
       else
-        @user = User.find(params[:id])
+        @user = User.find(id)
         @user.update(user_params)
         render json: @user
       end
