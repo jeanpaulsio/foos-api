@@ -11,7 +11,8 @@ module V1
       @user = User.new(user_params)
 
       if @user.save
-        render json: @user, status: :created
+        auth_token = Knock::AuthToken.new payload: { sub: @user.id }
+        render json: auth_token, status: :created
       else
         render json: @user.errors, status: :unprocessable_entity
       end

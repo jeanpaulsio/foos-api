@@ -6,8 +6,14 @@ class User < ApplicationRecord
   VALID_HANDLE_REGEX = /\A[a-z\d]*\Z/i
 
   validates :handle, presence: true, length: { maximum: 15 },
-                     format: { with: VALID_HANDLE_REGEX },
-                     uniqueness: { case_sensitive: false }
+                     format: {
+                       with: VALID_HANDLE_REGEX,
+                       message: 'Username must use letters and numbers only'
+                     },
+                     uniqueness: {
+                       case_sensitive: false,
+                       message: 'Username is taken'
+                     }
 
   def self.from_token_request(request)
     handle = request.params['auth'] && request.params['auth']['handle']
