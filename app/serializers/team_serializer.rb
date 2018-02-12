@@ -1,6 +1,6 @@
 class TeamSerializer < ActiveModel::Serializer
-  attributes :id, :team_name, :captain,
-             :player, :games_won, :games_lost,
+  attributes :id, :team_name, :captain, :captain_id,
+             :player, :player_id, :games_won, :games_lost,
              :games_played, :winning_percentage
 
   def team_name
