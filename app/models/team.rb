@@ -9,4 +9,3 @@ class Team < ApplicationRecord
                         foreign_key: 'losing_team_id',
                         dependent: :destroy
 end
-

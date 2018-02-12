@@ -4,7 +4,9 @@ module V1
     before_action :authenticate_user, except: :create
 
     def index
-      render json: User.all
+      @users = User.all
+      @users = @users.sort_by { |u| [u.winning_percentage, u.games_played] }
+      render json: @users.reverse
     end
 
     def create
