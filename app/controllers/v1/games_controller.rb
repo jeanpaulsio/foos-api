@@ -2,7 +2,7 @@ module V1
   # :nodoc:
   class GamesController < ApplicationController
     def index
-      render json: Game.order(created_at: :desc).limit(20)
+      render json: Game.order(created_at: :desc).limit(50)
     end
 
     def create
