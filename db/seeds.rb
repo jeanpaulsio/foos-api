@@ -4,16 +4,16 @@ Team.destroy_all
 
 # Create Users
 users = %w[
-  jp jm daniel extros
-  hellojebus cru seaczar
-  frank
+  jp cru daniel extros frank
+  hellojebus jm johnny max mj
+  seaczar softpaws
 ]
 
 users.each do |user|
   u                       = User.new
   u.handle                = user
-  u.password              = 'foobar'
-  u.password_confirmation = 'foobar'
+  u.password              = 'password'
+  u.password_confirmation = 'password'
   u.save
 end
 
@@ -28,24 +28,20 @@ daniel     = User.find_by_handle('daniel')
 seaczar    = User.find_by_handle('seaczar')
 frank      = User.find_by_handle('frank')
 
+
 team1         = Team.new
-team1.captain = jp
+team1.captain = hellojebus
 team1.player  = extros
 team1.save
 
-team2         = Team.new
-team2.captain = hellojebus
-team2.player  = extros
+team2 = Team.new
+team2.captain = jm
+team2.player  = daniel
 team2.save
 
 team3 = Team.new
-team3.captain = jm
-team3.player  = daniel
+team3.captain = seaczar
+team3.player  = frank
 team3.save
 
-team4 = Team.new
-team4.captain = seaczar
-team4.player  = frank
-team4.save
-
-puts '======== Created 4 Teams ========'
+puts '======== Created 3 Teams ========'
