@@ -7,7 +7,8 @@ module V1
 
     def create
       @game = RankingService.new(game_params).execute
-      render json: @game
+      # render json: @game
+      ActionCable.server.broadcast 'game_channel', json_response(@game)
     end
 
     private

@@ -11,5 +11,7 @@ Rails.application.routes.draw do
       resources :games, only: %i[index create destroy]
     end
   end
+
+  mount ActionCable.server, at: '/cable'
 end
 
