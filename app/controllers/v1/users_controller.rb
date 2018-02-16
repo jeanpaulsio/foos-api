@@ -1,7 +1,7 @@
 module V1
   # :nodoc:
   class UsersController < ApplicationController
-    before_action :authenticate_user, except: :create
+    before_action :authenticate_user, except: [:create, :index]
 
     def index
       @users = User.all

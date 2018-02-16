@@ -1,6 +1,8 @@
 module V1
   # :nodoc:
   class GamesController < ApplicationController
+    before_action :authenticate_user
+
     def index
       render json: Game.order(created_at: :desc).limit(50)
     end
