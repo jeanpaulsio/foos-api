@@ -5,7 +5,9 @@ module V1
 
     def index
       @users = User.all
-      @users = @users.sort_by { |u| [u.winning_percentage, u.games_played] }
+      @users = @users
+        .sort_by { |u| [u.trueskill_mean, u.games_played] }
+        .select { |u| u.games_played > 0 }
       render json: @users.reverse
     end
 

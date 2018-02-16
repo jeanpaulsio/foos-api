@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/saulabs/trueskill.git
+  revision: d15b0752cb4be5ff27f26e5dbbac520680446355
+  specs:
+    trueskill (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -158,6 +164,7 @@ DEPENDENCIES
   redis (~> 3.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  trueskill!
   tzinfo-data
 
 BUNDLED WITH

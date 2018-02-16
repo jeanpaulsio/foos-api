@@ -6,13 +6,8 @@ module V1
     end
 
     def create
-      @game = Game.new(game_params)
-
-      if @game.save
-        render json: @game, status: :created
-      else
-        render json: @game.errors, status: :unprocessable_entity
-      end
+      @game = RankingService.new(game_params).execute
+      render json: @game
     end
 
     private
