@@ -4,7 +4,12 @@ module V1
     before_action :authenticate_user
 
     def index
-      render json: Team.all
+      @teams = Team.all
+      @teams = @teams.sort_by do |team|
+        (team.captain.trueskill_mean + team.player.trueskill_mean) / 2.0
+      end
+
+      render json: @teams.reverse
     end
 
     def create
