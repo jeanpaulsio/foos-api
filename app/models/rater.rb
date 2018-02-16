@@ -1,17 +1,16 @@
 module Rater
   class TrueSkill
-    DefaultValue     = 0
-    DefaultMean      = 25
-    DefaultDeviation = 25.0 / 3.0
+    DEFAULT_MEAN      = 25
+    DEFAULT_DEVIATION = 25.0 / 3.0
 
-    def hello_world
+    def generate
       team1 = [
-        Saulabs::TrueSkill::Rating.new(DefaultMean, DefaultDeviation),
-        Saulabs::TrueSkill::Rating.new(DefaultMean, DefaultDeviation)
+        Saulabs::TrueSkill::Rating.new(DEFAULT_MEAN, DEFAULT_DEVIATION),
+        Saulabs::TrueSkill::Rating.new(DEFAULT_MEAN, DEFAULT_DEVIATION)
       ]
       team2 = [
-        Saulabs::TrueSkill::Rating.new(DefaultMean, DefaultDeviation),
-        Saulabs::TrueSkill::Rating.new(DefaultMean, DefaultDeviation)
+        Saulabs::TrueSkill::Rating.new(DEFAULT_MEAN, DEFAULT_DEVIATION),
+        Saulabs::TrueSkill::Rating.new(DEFAULT_MEAN, DEFAULT_DEVIATION)
       ]
       graph = Saulabs::TrueSkill::FactorGraph.new(team1 => 1, team2 => 2)
       graph.update_skills
