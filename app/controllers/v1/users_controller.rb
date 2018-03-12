@@ -7,7 +7,7 @@ module V1
       @users = User.all
       @users = @users
         .sort_by { |u| [u.trueskill_mean, u.games_played] }
-        .select  { |u| u.games_played > 50 }
+        .select  { |u| u.games_played > 24 }
       render json: @users.reverse
     end
 
